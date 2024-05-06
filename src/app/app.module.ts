@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostListComponent } from './post/post-list/post-list.component';
     PostListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
