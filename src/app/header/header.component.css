@@ -1,0 +1,25 @@
+mat-toolbar{
+    background-color: #0b1416;
+    color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.matInput-class{
+    border-radius: 25px;
+    
+}
+.search-bar{
+    padding-bottom: 2vh;
+    border: none;
+}
+.login{
+    margin-right: 2vw;
+    font-size:medium;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    border-radius: 25px;
+    background-color: #d93a00;
+}

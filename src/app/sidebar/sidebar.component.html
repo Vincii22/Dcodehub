@@ -1,0 +1,72 @@
+<ng-container>
+  
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                   fixed="true" [fixedTopGap]="options.value.top"
+                   [fixedBottomGap]="options.value.bottom">
+    <!-- sidebar title  -->
+       <mat-toolbar>
+       <span>
+        <p>Home</p>
+        <p>Popular</p>
+       </span>
+      </mat-toolbar>
+      <!-- sidebar content  -->
+      <mat-accordion>
+        <mat-expansion-panel >
+          <mat-expansion-panel-header >
+            <mat-panel-title class="header">
+              TOPICS 
+            </mat-panel-title>
+          
+          </mat-expansion-panel-header>
+          <p>Web Development</p>
+          <p>Data Science</p>
+          <p>Cyber Security</p>
+          <p>Data Analytics</p>
+          <p>Desktop Application Development</p>
+          <p>App Development</p>
+        </mat-expansion-panel>
+       
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="header">
+                RESOURCES 
+              </mat-panel-title>
+       
+            </mat-expansion-panel-header>
+            <p>About DcodeHub</p>
+                <p>Advertise</p>
+                <p>Help</p>
+                <p>Blog</p>
+                <p>Careers</p>
+                <p>Press</p>
+                <hr> <br>
+                <p>Communities</p>
+                <p>Best of DcodeHub</p>
+                <p>Topics</p>
+                <hr> <br>
+                <p>Content Policy</p>
+                <p>Privacy Policy</p>
+                <p>User Agreement</p>
+
+          </mat-expansion-panel>
+    <!-- <mat-toolbar class="example-footer">Footer</mat-toolbar> -->
+
+      </mat-accordion>
+
+
+      
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <p><button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button></p>
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+  
+  </ng-container>
+  
