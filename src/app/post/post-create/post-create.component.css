@@ -6,7 +6,6 @@ mat-card{
     height: 88vh; /* Set the height of the container */
     background-color: #0b1416;
     margin-left: 19vw;
-    margin-bottom: 5vh;
 }
 
 mat-form-field, textarea{
