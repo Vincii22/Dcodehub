@@ -7,13 +7,17 @@ mat-toolbar{
     flex: 1 1 auto;
   }
 
-.matInput-class{
-    border-radius: 25px;
-    
-}
+
 .search-bar{
     padding-bottom: 2vh;
     border: none;
+    background-color: #33464C;
+    width: 35vw;
+    height: 5vh;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 15px;
+    
 }
 .login{
     margin-right: 2vw;
@@ -22,4 +26,8 @@ mat-toolbar{
     padding-left: 1vw;
     border-radius: 25px;
     background-color: #d93a00;
+}
+.example-icon{
+    margin-bottom: 20px;
+    
 }

@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://arvingm1522:NWhBOmNTzDJ3Xq72@dcodehub.ajwn4fs.mongodb.net/?retryWrites=true&w=majority&appName=dcodehub")
+mongoose.connect("mongodb+srv://arvingm1522:NWhBOmNTzDJ3Xq72@dcodehub.ajwn4fs.mongodb.net/dcodehub?retryWrites=true&w=majority&appName=dcodehub")
 .then(() => {
     console.log('Connected to the database');
 })

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
@@ -42,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    AppRoutingModule
 
   ],
   providers: [],
