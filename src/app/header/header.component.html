@@ -1,15 +1,24 @@
-<p>
+<p class="fixed-toolbar">
     <mat-toolbar>
       <mat-toolbar-row>
-        <span>DcodeHub</span>
+        <span>DecodeHub</span>
         <span class="example-spacer"></span>
         <form >
-              <input matInput placeholder="Search Dcodehub" class="search-bar">
+              <input matInput placeholder="Search Decodehub" class="search-bar">
         </form>
-        <span class="example-spacer"></span>
-        <button mat-icon-button routerLink="/create">
-          Create a Post
-       </button>
+        <div class="header-buttons">
+          
+          <button class="chat" mat-icon-button>
+            <mat-icon>chat</mat-icon>
+          </button>
+          <button class="create" mat-icon-button routerLink="/create">
+            + Create
+          </button>
+          <button class="notifications" mat-icon-button>
+            <mat-icon>notifications</mat-icon>
+          </button>
+        </div>
+       
         <span class="example-spacer"></span>
         <button class="login" aria-label="Example icon-button with menu icon">  Log in</button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">

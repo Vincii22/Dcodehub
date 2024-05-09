@@ -29,27 +29,31 @@
         </mat-expansion-panel>
        
 
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true" >
             <mat-expansion-panel-header>
               <mat-panel-title class="header">
                 RESOURCES 
               </mat-panel-title>
        
             </mat-expansion-panel-header>
-            <p>About DcodeHub</p>
-                <p>Advertise</p>
-                <p>Help</p>
-                <p>Blog</p>
-                <p>Careers</p>
-                <p>Press</p>
-                <hr> <br>
-                <p>Communities</p>
-                <p>Best of DcodeHub</p>
-                <p>Topics</p>
-                <hr> <br>
-                <p>Content Policy</p>
-                <p>Privacy Policy</p>
-                <p>User Agreement</p>
+            <div class="sidebar-links">
+              <br>
+              <button>About Decodehub</button>
+              <button>Advertise</button>
+              <button>Help</button>
+              <button>Blog</button>
+              <button>Careers</button>
+              <button>Press</button>
+              <hr> <br>
+              <button>Communities</button>
+              <button>Best of CodeHub</button>
+              <button>Topics</button>
+              <hr> <br>
+              <button>Content Policy</button>
+              <button>Privacy Policy</button>
+              <button>User Agreement</button>
+            </div>
+            
 
           </mat-expansion-panel>
     <!-- <mat-toolbar class="example-footer">Footer</mat-toolbar> -->
@@ -67,6 +71,6 @@
       </mat-sidenav-content>
       
     </mat-sidenav-container>
-  
+    
   </ng-container>
   

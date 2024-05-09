@@ -1,39 +1,104 @@
-<mat-accordion multi="true" *ngIf="getPostsForCurrentPage().length > 0">
-    <mat-expansion-panel *ngFor="let post of getPostsForCurrentPage()">
-   
-        <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
-        <p> {{post.content}} </p>
-        <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image">
-        <mat-action-row>
-            <a [routerLink]="['/edit', post._id]">
-                <button mat-button color="primary" (click)="selectedPost = post; openEditModal()">
-                   Edit
-                </button>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<body>
+    <div class="content-flex">
+
+    <mat-accordion multi="true" *ngIf="getPostsForCurrentPage().length > 0" >
+        <div class="filter">
+            <button mat-icon-button>
+                <mat-icon fontIcon="filter_list"></mat-icon>
+            </button>
+
+        </div>
+
+        <mat-expansion-panel  [expanded]="true" *ngFor="let post of getPostsForCurrentPage()">
+            <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
+            <p> {{post.content}} </p>
+            <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image">
+
+            <div class="post-buttons">
+
+
+                <div class="like">
+                    <div class="like-add">
+                        <button mat-icon-button>
+                            <mat-icon fontIcon="arrow_upward"></mat-icon>
+                        </button>
+                    </div>
+                  
+                    <p>135</p>
+                    <div class="like-down">
+                        <button mat-icon-button>
+                            <mat-icon fontIcon="arrow_downward"></mat-icon>
+                        </button>
+                    </div>
+                   
+                </div>
+
+                 
+                <div class="comment">
+                    <button mat-icon-button>
+                        <mat-icon fontIcon="comment"></mat-icon>
+                    </button>
+                    <p>5</p>
+                </div>
+
+                <div class="share">
+                    <button mat-icon-button>
+                        <mat-icon fontIcon="share"></mat-icon>
+                    </button>
+                    <p>Share</p>
+                </div>
+
+
+            </div>
+         
+            <mat-action-row>
+                <a [routerLink]="['/edit', post._id]">
+                    <button mat-button color="primary" (click)="selectedPost = post; openEditModal()">
+                       Edit
+                    </button>
+                    
+      <app-post-edit *ngIf="selectedPost" [post]="selectedPost" (postUpdated)="onPostUpdated($event)"></app-post-edit>
+                </a>
                 
-  <app-post-edit *ngIf="selectedPost" [post]="selectedPost" (postUpdated)="onPostUpdated($event)"></app-post-edit>
-            </a>
-            
-            <button mat-button color="warn" (click)="deletePost(post._id)">
-     Delete
-  </button>
-  
-        </mat-action-row>
-    </mat-expansion-panel>
-  </mat-accordion>
-  <p class="info-text mat-body-1" *ngIf="getPostsForCurrentPage().length <= 0">No post added</p>
-  
-  
-  <div class="container">
-    <ul class="pagination">
-        <!-- Pass the $event object to the nextPage and previousPage methods -->
-        <li><a href="#" (click)="previousPage($event)"><</a></li>
-        <!-- Dynamically generate page numbers with a class for the current page -->
-        <li *ngFor="let page of [].constructor(totalPages); let i = index">
-            <!-- Pass the $event object to the method that sets the current page -->
-            <a href="#" (click)="setCurrentPage(i + 1, $event)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
-        </li>
-        <li><a href="#" (click)="nextPage($event)">></a></li>
-    </ul>
-   </div>
-  
-  
+                <button mat-button color="warn" (click)="deletePost(post._id)">
+         Delete
+      </button>
+      
+            </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <p class="info-text mat-body-1" *ngIf="getPostsForCurrentPage().length <= 0">No post added</p>
+      
+      
+      <div class="recent" multi="true" *ngIf="getPostsForCurrentPage().length > 0">
+        <mat-card *ngFor="let post of getPostsForCurrentPage()">
+            <mat-card-header>RECENT POSTS</mat-card-header>
+            <div class="recent-container">
+                <div class="recent-content">
+                    <p>Jeniper</p>
+                    <p>{{ post.title }}</p>
+                    <p class="recent-analytics">135 upvotes · 5 Comments</p>
+                </div>
+               
+                <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image">
+            </div>
+          </mat-card>
+      </div>
+       
+    </div>
+
+      <div class="container">
+        <ul class="pagination">
+            <!-- Pass the $event object to the nextPage and previousPage methods -->
+            <li><a href="#" (click)="previousPage($event)"><</a></li>
+            <!-- Dynamically generate page numbers with a class for the current page -->
+            <li *ngFor="let page of [].constructor(totalPages); let i = index">
+                <!-- Pass the $event object to the method that sets the current page -->
+                <a href="#" (click)="setCurrentPage(i + 1, $event)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
+            </li>
+            <li><a href="#" (click)="nextPage($event)">></a></li>
+        </ul>
+       </div>
+    
+</body>

@@ -3,12 +3,39 @@ mat-toolbar{
     color: white;
 }
 
+.header-buttons{
+    margin-left: 10vw;
+    width: 45%;
+    display: flex;
+    /* background-color: white; */
+}
+.create{
+    font-size: 2vh;
+    width: 45%;
+    border-radius: 2%;
+}
+.create:hover{
+    background-color:#33464C;
+}
+.chat:hover{
+    border-radius: 50%;
+    background-color:#33464C;
+
+}
+.notifications:hover{
+    border-radius: 50%;
+    background-color:#33464C;
+
+}
 .example-spacer {
     flex: 1 1 auto;
   }
-
+mat-icon:hover{
+    border-radius: 50%;
+}
 
 .search-bar{
+    margin-left: 25vw;
     padding-bottom: 2vh;
     border: none;
     background-color: #33464C;
@@ -30,4 +57,12 @@ mat-toolbar{
 .example-icon{
     margin-bottom: 20px;
     
+}
+.fixed-toolbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+   border-bottom: solid 1px #82959b;
 }
