@@ -1,0 +1,17 @@
+<div class="centered-content">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <h1>Sign-up</h1>
+      <div class="form-group">
+        <label for="registerUsername">Username</label>
+        <input type="text" id="registerUsername" formControlName="username" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input type="password" id="registerPassword" formControlName="password" class="form-control">
+      </div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> <!-- Display error message -->
+      <button type="submit" class="submit-button">Register</button>
+      <button class="registered" aria-label="Example icon-button with menu icon" routerLink="/login">Already Registered?</button>
+    </form>
+  </div>
+  

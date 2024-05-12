@@ -20,10 +20,13 @@
         </div>
        
         <span class="example-spacer"></span>
-        <button class="login" aria-label="Example icon-button with menu icon">  Log in</button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>...</mat-icon>
+
+       <span class="logout-icon" *ngIf="authService.isLoggedIn()">
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
         </button>
+      </span>
+      
       </mat-toolbar-row>
 </mat-toolbar>
 </p>  

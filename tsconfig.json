@@ -21,7 +21,10 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+     "types": ["node", "jwt-decode"], // Included "jwt-decode" if you have custom type definitions for it
+     "esModuleInterop": true,
+     "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

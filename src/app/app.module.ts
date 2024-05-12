@@ -18,7 +18,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth/auth.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { UnauthenticatedComponent } from './unauthenticated/unauthenticated.component';
+import { AuthService } from './post/auth.service';
+import { UserService } from './post/user.service'; // Adjust the import path as necessary
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { APP_INITIALIZER } from '@angular/core';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     PostCreateComponent,
     PostEditComponent,
     PostListComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent,
+    AuthComponent,
+    PageNotFoundComponent,
+    RegisterComponent,
+    UnauthenticatedComponent,
+  
     
   ],
   imports: [
@@ -43,10 +59,24 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSnackBarModule
+ 
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (authService: AuthService) => () => authService.autoLogin(),
+      deps: [AuthService],
+      multi: true
+    },
+    UserService,
+    // Add AuthInterceptor to the list of providers
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,75 @@
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    background-color: #33464C;
+
+
+}
+
+.register-form {
+    width: 25vw; /* Adjust as needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50vh;
+    background-color: #0b1416;
+    color: #f8f9fa;
+    padding: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+
+
+
+}
+
+.register-form input{
+    height: 4vh;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-bottom: 2vh;
+}
+.register-form label{
+    display: flex;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; /* Bootstrap border color */
+}
+/* src/app/login/login.component.css */
+
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2vh;
+}
+
+.submit-button:hover {
+    background-color: #33464C; /* Darker shade on hover */
+}
+.error-message{
+    background-color: red;
+    padding: 1vh;
+    text-align: center;
+    color: #ced4da;
+    font-size: larger;
+}

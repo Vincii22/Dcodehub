@@ -1,0 +1,32 @@
+
+   
+        <div *ngIf="loginError" class="error-message" #errorMessage>
+            {{ loginError }}
+        </div>
+    <div class="centered-content">
+    
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+            
+          
+            <h1>CodeHub</h1>
+
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" formControlName="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" formControlName="password" class="form-control">
+            </div>
+            <button type="submit" class="submit-button">Login</button>
+            <button class="login" aria-label="Example icon-button with menu icon" routerLink="/register">Register</button>
+    
+
+        </form>
+        
+    
+    </div>
+    
+       
+  
+
